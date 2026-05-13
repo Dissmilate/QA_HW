@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Settings>
+    <BaseUrl>https://automationteststore.com/</BaseUrl>
+    <Login>Horcrux</Login>
+    <Password>admin123</Password>
+</Settings>
