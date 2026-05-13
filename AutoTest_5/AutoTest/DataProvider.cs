@@ -6,7 +6,6 @@ namespace SeleniumTests
     {
         public static IEnumerable<ProductData> ProductDataFromXmlFile()
         {
-            // Ищем файл в нескольких местах
             string[] possiblePaths = new[]
             {
                 Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "products.xml"),

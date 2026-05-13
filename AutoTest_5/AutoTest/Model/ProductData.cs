@@ -2,6 +2,10 @@
 
 public class ProductData
 {
+    public string FullName { get; set; }
+    public string CategoryName { get; set; }
+    public string SubcategoryName { get; set; }
+    
     public ProductData()
     {
         FullName = "";
@@ -16,7 +20,4 @@ public class ProductData
         SubcategoryName = subcategoryName;
     }
 
-    public string FullName { get; set; }
-    public string CategoryName { get; set; }
-    public string SubcategoryName { get; set; }
 }

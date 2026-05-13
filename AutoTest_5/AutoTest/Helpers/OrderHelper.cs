@@ -14,7 +14,6 @@ namespace SeleniumTests
         {
             manager.Navigation.OpenHomePage();
             
-            // Оставил для теста отдельно "Shoes" тк если брать из класса то пОчЕмУ-тО ВСЕ ЛОМАЕТСЯ
             manager.Order.OpenSubCategory(product.CategoryName, "Shoes");
             manager.Order.OpenProductByTitle(product.FullName);
             
@@ -30,16 +29,13 @@ namespace SeleniumTests
         
         public void OpenSubCategory(string mainCategory, string subCategory)
         {
-            // 1. Сначала переходим на страницу главной категории
             OpenMainCategoryPage(mainCategory);
     
-            // 2. На странице категории выбираем подкатегорию
             ClickOnSubcategoryOnPage(subCategory);
         }
 
         private void OpenMainCategoryPage(string mainCategory)
         {
-            // Находим ссылку на главную категорию и переходим по ней
             var categoryLink = driver.FindElement(By.XPath($"//ul[@class='nav-pills categorymenu']//a[contains(text(),'{mainCategory}')]"));
             string categoryUrl = categoryLink.GetAttribute("href");
             driver.Navigate().GoToUrl(categoryUrl);
@@ -47,7 +43,6 @@ namespace SeleniumTests
 
         private void ClickOnSubcategoryOnPage(string subCategory)
         {
-            // По тексту ссылки (самый простой способ)
             var subCategoryLink = driver.FindElement(By.LinkText(subCategory));
             subCategoryLink.Click();
         }
